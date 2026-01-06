@@ -32,9 +32,54 @@ Pokedex RESTful API built with NestJS and MongoDB. This project is part of Ferna
 - RESTful API endpoints
 - Landing page with Pokemon-themed design
 
+## Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [NestJS CLI](https://docs.nestjs.com/cli/overview)
+- [Docker](https://www.docker.com/get-started)
+- [Yarn](https://yarnpkg.com/) package manager
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone <repository-url>
+cd 03-pokedex
+```
+
+2. **Install NestJS CLI globally** (if not already installed)
+```bash
+npm install -g @nestjs/cli
+```
+
+3. **Install Docker** (if not already installed)
+   - Download and install Docker Desktop from [docker.com](https://www.docker.com/get-started)
+   - Verify installation: `docker --version`
+
+4. **Install project dependencies**
+```bash
+yarn install
+```
+
+5. **Start MongoDB with Docker**
+```bash
+docker-compose up -d
+```
+
+6. **Run the application**
+```bash
+yarn run start
+```
+
+The API will be available at `http://localhost:3000`
+
 ## Project setup
 
+### Development Commands
+
 ```bash
+# Install dependencies
 $ yarn install
 ```
 
