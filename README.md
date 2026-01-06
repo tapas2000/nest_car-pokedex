@@ -23,7 +23,14 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Pokedex RESTful API built with NestJS and MongoDB. This project is part of Fernando Herrera's NestJS course, developed by Juan Felipe Tapasco.
+
+### Features
+- Complete CRUD operations for Pokemon management
+- MongoDB integration with Mongoose
+- Docker support for MongoDB
+- RESTful API endpoints
+- Landing page with Pokemon-themed design
 
 ## Project setup
 
