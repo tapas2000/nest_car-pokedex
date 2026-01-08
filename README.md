@@ -30,6 +30,7 @@ Pokedex RESTful API built with NestJS and MongoDB. This project is part of Ferna
 - MongoDB integration with Mongoose
 - Docker support for MongoDB
 - RESTful API endpoints
+- Database seed endpoint to populate with 650 Pokemon
 - Landing page with Pokemon-themed design
 
 ## Getting Started
@@ -73,6 +74,13 @@ yarn run start
 ```
 
 The API will be available at `http://localhost:3000`
+
+7. **Populate the database** (optional)
+```bash
+# Make a GET request to seed the database with 650 Pokemon
+curl http://localhost:3000/api/v2/seed
+```
+Or simply visit `http://localhost:3000/api/v2/seed` in your browser.
 
 ## Project setup
 

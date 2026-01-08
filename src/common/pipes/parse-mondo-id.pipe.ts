@@ -4,7 +4,7 @@ import {
   Injectable,
   PipeTransform,
 } from '@nestjs/common';
-import { isValidObjectId, ObjectId } from 'mongoose';
+import { isValidObjectId } from 'mongoose';
 
 @Injectable()
 export class ParseMondoIdPipe implements PipeTransform {
