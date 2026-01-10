@@ -8,12 +8,13 @@ import {
   Param,
   Patch,
   Post,
+  Query,
 } from '@nestjs/common';
+import { ParseMondoIdPipe } from 'src/common/pipes/parse-mondo-id.pipe';
 import { CreatePokemonDto } from './dto/create-pokemon.dto';
 import { UpdatePokemonDto } from './dto/update-pokemon.dto';
 import { PokemonService } from './pokemon.service';
-import { ParseObjectIdPipe } from '@nestjs/mongoose';
-import { ParseMondoIdPipe } from 'src/common/pipes/parse-mondo-id.pipe';
+import { PaginationDTo } from 'src/common/dto/pagination.dto';
 
 @Controller('pokemon')
 export class PokemonController {
@@ -26,8 +27,10 @@ export class PokemonController {
   }
 
   @Get()
-  findAll() {
-    return this.pokemonService.findAll();
+  findAll(@Query() paginationDTo: PaginationDTo) {
+    console.log({ paginationDTo });
+
+    return this.pokemonService.findAll(paginationDTo);
   }
 
   @Get(':term')
