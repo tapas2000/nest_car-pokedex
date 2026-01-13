@@ -23,11 +23,84 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Pokedex RESTful API built with NestJS and MongoDB. This project is part of Fernando Herrera's NestJS course, developed by Juan Felipe Tapasco.
+
+### Features
+- Complete CRUD operations for Pokemon management
+- MongoDB integration with Mongoose
+- Docker support for MongoDB
+- RESTful API endpoints
+- Database seed endpoint to populate with 650 Pokemon
+- Landing page with Pokemon-themed design
+
+## Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [NestJS CLI](https://docs.nestjs.com/cli/overview)
+- [Docker](https://www.docker.com/get-started)
+- [Yarn](https://yarnpkg.com/) package manager
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone <repository-url>
+cd 03-pokedex
+```
+
+2. **Install NestJS CLI globally** (if not already installed)
+```bash
+npm install -g @nestjs/cli
+```
+
+3. **Install Docker** (if not already installed)
+   - Download and install Docker Desktop from [docker.com](https://www.docker.com/get-started)
+   - Verify installation: `docker --version`
+
+4. **Install project dependencies**
+```bash
+yarn install
+```
+
+5. **Configure environment variables**
+   - Copy the template file to create your `.env` file:
+   ```bash
+   cp .env.template .env
+   ```
+   - Update the `.env` file with your configuration:
+   ```env
+   MONGODB=mongodb://localhost:27017/nest-pokemon
+   PORT=3000
+   URL_API_PREFIX=api/v2
+   DEFAULT_LIMIT=11
+   ```
+
+6. **Start MongoDB with Docker**
+```bash
+docker-compose up -d
+```
+
+7. **Run the application**
+```bash
+yarn run start
+```
+
+The API will be available at `http://localhost:3000`
+
+8. **Populate the database** (optional)
+```bash
+# Make a GET request to seed the database with 650 Pokemon
+curl http://localhost:3000/api/v2/seed
+```
+Or simply visit `http://localhost:3000/api/v2/seed` in your browser.
 
 ## Project setup
 
+### Development Commands
+
 ```bash
+# Install dependencies
 $ yarn install
 ```
 
