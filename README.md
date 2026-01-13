@@ -63,19 +63,32 @@ npm install -g @nestjs/cli
 yarn install
 ```
 
-5. **Start MongoDB with Docker**
+5. **Configure environment variables**
+   - Copy the template file to create your `.env` file:
+   ```bash
+   cp .env.template .env
+   ```
+   - Update the `.env` file with your configuration:
+   ```env
+   MONGODB=mongodb://localhost:27017/nest-pokemon
+   PORT=3000
+   URL_API_PREFIX=api/v2
+   DEFAULT_LIMIT=11
+   ```
+
+6. **Start MongoDB with Docker**
 ```bash
 docker-compose up -d
 ```
 
-6. **Run the application**
+7. **Run the application**
 ```bash
 yarn run start
 ```
 
 The API will be available at `http://localhost:3000`
 
-7. **Populate the database** (optional)
+8. **Populate the database** (optional)
 ```bash
 # Make a GET request to seed the database with 650 Pokemon
 curl http://localhost:3000/api/v2/seed
