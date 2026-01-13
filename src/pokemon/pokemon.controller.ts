@@ -28,8 +28,6 @@ export class PokemonController {
 
   @Get()
   findAll(@Query() paginationDTo: PaginationDTo) {
-    console.log({ paginationDTo });
-
     return this.pokemonService.findAll(paginationDTo);
   }
 
