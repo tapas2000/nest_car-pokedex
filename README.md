@@ -143,6 +143,38 @@ $ mau deploy
 
 With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
 
+## Production Build Instructions
+
+To run the application in production using Docker Compose:
+
+1. **Create the production environment file**
+   
+   Copy the template and create `.env.prod`:
+   ```bash
+   cp .env.template .env.prod
+   ```
+
+2. **Fill in the required variables**
+   
+   Edit `.env.prod` and set the following variables (replace with your own secure values):
+   ```env
+   URL_API_PREFIX=api/v2
+   DEFAULT_LIMIT=10
+   PORT=3000
+   DATABASE_USER=your_db_user
+   DATABASE_PW=your_db_password
+   MONGODB=mongodb://mongo-poke:27017/nest-pokemon
+   ```
+
+3. **Build and run the production Docker image**
+   
+   Use the following command:
+   ```bash
+   docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+   ```
+
+The application will be available at `http://localhost:3000` (or the port you specified).
+
 ## Resources
 
 Check out a few resources that may come in handy when working with NestJS:
